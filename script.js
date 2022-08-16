@@ -46,8 +46,9 @@ startBtn.addEventListener("click",function(){
   
 });
 let count=1;
+let lapDisplay;
 function createLap(){
-
+  lapDisplay=document.getElementById("display-lapse");
   let lapSection=document.createElement("div");
   let lapHeading=document.createElement("span");
   let lap=document.createElement("span");
@@ -66,6 +67,8 @@ lapBtn.addEventListener("click",function(){
   if(lapBtn.innerText=="Reset"){
     timeDisplay.innerText="00:00:00";
     lapBtn.innerText="Lap";
+    lapDisplay.innerHTML="";
+    count=1;
   }
   else if(timeDisplay.innerText!=="00:00:00"){
     createLap();
